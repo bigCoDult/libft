@@ -84,6 +84,8 @@ static char	**set_sp(char const *s, char **sp, size_t *in)
 		sp[w_i] = (char *)ft_calloc((in[i_i + 1] - in[i_i] + 1) + 1, 1);
 		if (sp[w_i] == NULL)
 		{
+			while(w_i)
+				free(sp[w_i--]);
 			free(sp);
 			return (NULL);
 		}
