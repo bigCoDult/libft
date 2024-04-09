@@ -6,7 +6,7 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:00:52 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/04/05 20:00:52 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/04/09 13:08:50 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,4 @@ char	**ft_split(char const *s, char c)
 	info = set_info(calloc_info(s, c), s, c);
 	words = (char **)ft_calloc((info[0] / 2 + 1), sizeof(char *));
 	return (set_words(s, words, info));
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	size_t i = 0;
-	while (i)
-	{
-		printf("%s",ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')[i++]);
-	}
-	return (0);
 }
