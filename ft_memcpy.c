@@ -19,10 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t count)
 
 	dest_tmp = (unsigned char *)dest;
 	src_tmp = (const unsigned char *)src;
-	while (count)
-	{
-		count--;
+	while (count--)
 		*dest_tmp++ = *src_tmp++;
-	}
 	return (dest);
 }

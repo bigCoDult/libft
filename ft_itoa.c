@@ -14,8 +14,6 @@
 
 static int	*ft_get_min_info(int n, int *min_info)
 {
-	if (min_info == NULL)
-		return (NULL);
 	if (n < 0)
 	{
 		min_info[0] = 1;

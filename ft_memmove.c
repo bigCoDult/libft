@@ -21,19 +21,13 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	src_tmp = (const unsigned char *)src;
 	if (dest_tmp > src_tmp)
 	{
-		while (count)
-		{
-			count--;
+		while (count--)
 			*(dest_tmp + count) = *(src_tmp + count);
-		}
 	}
 	else
 	{
-		while (count)
-		{
-			count--;
+		while (count--)
 			*dest_tmp++ = *src_tmp++;
-		}
 	}
 	return (dest);
 }

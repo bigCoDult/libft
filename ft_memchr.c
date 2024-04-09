@@ -19,9 +19,8 @@ void	*ft_memchr(const void *ptr, int c, size_t count)
 
 	char_ptr = (unsigned char *)ptr;
 	char_c = (unsigned char)c;
-	while (count)
+	while (count--)
 	{
-		count--;
 		if (*char_ptr == char_c)
 			return ((void *)(char_ptr));
 		char_ptr++;

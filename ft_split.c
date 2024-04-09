@@ -42,6 +42,8 @@ static size_t	*calloc_info(char const *s, char c)
 
 	i_i = get_info_length(s, c);
 	info = (size_t *)ft_calloc(i_i + 1, sizeof(size_t));
+	if (info == NULL)
+		return (NULL);
 	info[0] = 0;
 	if (i_i > 1)
 		info[0] = i_i;
@@ -53,6 +55,8 @@ static size_t	*set_info(size_t *info, char const *s, char c)
 	size_t	i_i;
 	size_t	s_i;
 
+	if (info == NULL)
+		return (NULL);
 	s_i = 0;
 	i_i = 1;
 	while (s[s_i] != '\0')
@@ -80,6 +84,14 @@ static char	**set_words(char const *s, char **words, size_t *info)
 	while (i_i < info[0])
 	{
 		words[w_i] = (char *)ft_calloc((info[i_i + 1] - info[i_i] + 1) + 1, 1);
+		if (words[w_i] == NULL)
+		{
+			free(info);
+			while (w_i)
+				free(words[w_i--]);
+			free(words[0]);
+			return (NULL);
+		}
 		ft_memmove(words[w_i++], s + info[i_i], info[i_i + 1] - info[i_i] + 1);
 		i_i += 2;
 	}
@@ -93,6 +105,10 @@ char	**ft_split(char const *s, char c)
 	size_t	*info;
 
 	info = set_info(calloc_info(s, c), s, c);
+	if (info == NULL)
+		return (NULL);
 	words = (char **)ft_calloc((info[0] / 2 + 1), sizeof(char *));
+	if (words == NULL)
+		return (NULL);
 	return (set_words(s, words, info));
 }
