@@ -6,7 +6,7 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:18:39 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/03/26 12:18:41 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/04/09 12:54:15 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,4 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
