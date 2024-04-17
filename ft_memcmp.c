@@ -24,8 +24,6 @@ int	ft_memcmp(const void *lhs, const void *rhs, size_t size)
 	if (size == 0)
 		return (0);
 	while (--size && lhs_tmp[i] == rhs_tmp[i])
-	{
 		i++;
-	}
 	return ((lhs_tmp[i] - rhs_tmp[i]));
 }

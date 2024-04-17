@@ -15,17 +15,23 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# define DIGIT_RANGE_START		48
-# define DIGIT_RANGE_END		57
+# define DIGIT_RANGE_START			48
+# define DIGIT_RANGE_END			57
 # define UPPER_ALPHA_RANGE_START	65
 # define UPPER_ALPHA_RANGE_END		90
 # define LOWER_ALPHA_RANGE_START	97
 # define LOWER_ALPHA_RANGE_END		122
-# define ASCII_RANGE_START		0
-# define ASCII_RANGE_END		127
+# define ASCII_RANGE_START			0
+# define ASCII_RANGE_END			127
 # define PRINTABLE_RANGE_START		32
 # define PRINTABLE_RANGE_END		126
 # define LETTER_CASE_INTERVAL		32
+
+typedef struct s_list
+{
+	void			* content ;
+	struct s_list	*next ;
+}	t_list;
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);

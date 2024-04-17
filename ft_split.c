@@ -90,6 +90,7 @@ static char	**set_words(char const *s, char **words, size_t *info)
 			while (w_i)
 				free(words[w_i--]);
 			free(words[0]);
+			free(words);
 			return (NULL);
 		}
 		ft_memmove(words[w_i++], s + info[i_i], info[i_i + 1] - info[i_i] + 1);

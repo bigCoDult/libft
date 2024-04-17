@@ -12,59 +12,61 @@
 
 #include "libft.h"
 
-static int	*ft_get_min_info(int n, int *min_info)
-{
-	if (n < 0)
-	{
-		min_info[0] = 1;
-		min_info[1] = -n;
-		min_info[2] = -n;
-		min_info[3] = 2;
-	}
-	else
-	{
-		min_info[0] = 0;
-		min_info[1] = n;
-		min_info[2] = n;
-		min_info[3] = 1;
-	}
-	return (min_info);
-}
+static char	*ft_get_bigmin_str(void);
 
-static char	*ft_deal_largest_min(void)
+typedef struct s_min_info
 {
-	char	*str;
-
-	str = (char *)ft_calloc(12, sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	ft_memmove(str, "-2147483648", 12);
-	return (str);
-}
+	int		minus_flag;
+	int		length;
+	int		n1;
+	int		n2;
+} t_min_info;
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		min_info[4];
+	t_min_info	min_info;
 
 	if (n == -2147483648)
-		return (ft_deal_largest_min());
-	ft_get_min_info(n, min_info);
-	while (min_info[1] > 9)
+		return (ft_get_bigmin_str());
+	if (n < 0)
 	{
-		min_info[1] /= 10;
-		min_info[3]++;
+		min_info.minus_flag = 1;
+		min_info.length = 2;
 	}
-	str = (char *)ft_calloc(min_info[3] + 1, sizeof(char));
+	else
+	{
+		min_info.minus_flag = 0;
+		min_info.length = 1;
+	}
+	min_info.n1 = n;
+	min_info.n2 = n;
+	
+	while (min_info.n1 > 9)
+	{
+		min_info.n1 /= 10;
+		min_info.length++;
+	}
+	str = (char *)ft_calloc(min_info.length + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (min_info[0] == 1)
+	if (min_info.minus_flag == 1)
 		str[0] = '-';
-	while (min_info[3] > min_info[0])
+	while (min_info.length-- > min_info.minus_flag)
 	{
-		min_info[3]--;
-		str[min_info[3]] = (min_info[2] % 10) + '0';
-		min_info[2] /= 10;
+		str[min_info.length] = (char)((min_info.n2 % 10) + '0');
+		min_info.n2 /= 10;
 	}
+	return (str);
+}
+
+static char	*ft_get_bigmin_str(void)
+{
+	char	*str;
+
+	str = (char *)ft_calloc(11 + 1, sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	ft_memmove(str, "-2147483648", 11);
 	return (str);
 }
