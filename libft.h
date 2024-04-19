@@ -27,12 +27,19 @@
 # define PRINTABLE_RANGE_END		126
 # define LETTER_CASE_INTERVAL		32
 
+typedef struct s_min_info
+{
+	int		minus_flag;
+	int		length;
+	int		n1;
+	int		n2;
+}	t_min_info;
+
 typedef struct s_list
 {
-	void			* content ;
-	struct s_list	*next ;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
-
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
@@ -67,5 +74,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
 
 #endif /* LIBFT_H */
