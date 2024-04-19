@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = clang
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
@@ -40,6 +40,7 @@ SRC = \
       ./ft_putstr_fd.c \
       ./ft_putendl_fd.c \
       ./ft_putnbr_fd.c \
+      ./ft_lstnew.c \
 
 OBJ = $(SRC:.c=.o)
 
