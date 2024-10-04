@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -O0 -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 RM = rm -f
@@ -36,11 +36,13 @@ SRC = \
       ./ft_itoa.c \
       ./ft_strmapi.c \
       ./ft_striteri.c \
-      ./ft_putchar_fd.c \
-      ./ft_putstr_fd.c \
       ./ft_putendl_fd.c \
       ./ft_putnbr_fd.c \
       ./ft_lstnew.c \
+      ./ft_putchar_fd.c \
+      ./ft_putstr_fd.c \
+      ./ft_printf.c \
+      ./ft_printfutils.c \
 
 OBJ = $(SRC:.c=.o)
 
