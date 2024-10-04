@@ -1,9 +1,9 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -g -O0 -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
-RM = rm -f
+RM = rm -rf
 INC = -I.
 SRC = \
       ./ft_isdigit.c \
