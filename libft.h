@@ -44,11 +44,6 @@ typedef struct s_min_info
 	int		n2;
 }	t_min_info;
 
-typedef struct s_list
-{
-	void			*content;
-	struct t_list	*next;
-}	t_list;
 
 typedef struct s_sentence
 {
@@ -56,6 +51,12 @@ typedef struct s_sentence
 	size_t	*edge_pair;
 	char	**words;
 }	t_sentence;
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
