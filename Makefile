@@ -43,7 +43,9 @@ SRC = \
       ./ft_putstr_fd.c \
       ./ft_printf.c \
       ./ft_printfutils.c \
-
+      ./ft_lstnew.c \
+      ./ft_lstadd_front.c \
+#보너스를 위한 룰이 따로 있어야 함
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
