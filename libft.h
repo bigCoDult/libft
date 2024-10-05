@@ -47,7 +47,7 @@ typedef struct s_min_info
 typedef struct s_list
 {
 	void			*content;
-	struct s_list	*next;
+	struct t_list	*next;
 }	t_list;
 
 typedef struct s_sentence
