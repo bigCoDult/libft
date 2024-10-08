@@ -6,16 +6,16 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:51:07 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/10/08 11:22:46 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/10/08 12:33:23 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list **new_list;
-	t_list *new_node;
+	t_list	**new_list;
+	t_list	*new_node;
 
 	while (lst->next != NULL)
 	{
