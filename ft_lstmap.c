@@ -6,7 +6,7 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:51:07 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/10/08 12:33:23 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/10/08 16:28:27 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	**new_list;
 	t_list	*new_node;
 
+	if (lst == NULL || f == NULL || del == NULL)
+		return (NULL);
+	new_list = (t_list **)ft_calloc(1, sizeof(t_list *));
 	while (lst->next != NULL)
 	{
 		new_node = ft_lstnew(f(lst->content));
