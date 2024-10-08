@@ -6,13 +6,13 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:45:42 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/10/07 18:48:47 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/10/08 12:15:10 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	while (*lst != NULL)
 		ft_lstdelone(ft_lstlast(lst), del);
