@@ -6,7 +6,7 @@
 /*   By: sanbaek <sanbaek@student.42gyeongsan.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:49:31 by sanbaek           #+#    #+#             */
-/*   Updated: 2024/10/08 12:34:02 by sanbaek          ###   ########.fr       */
+/*   Updated: 2024/10/08 17:36:19 by sanbaek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next != NULL)
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst != NULL)
 	{
 		f(lst->content);
 		lst = lst->next;
