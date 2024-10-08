@@ -17,28 +17,26 @@ static void	ft_set_min_info(t_min_info *min_info, int n);
 
 char	*ft_itoa(int n)
 {
-	t_min_info	*min_info;
+	t_min_info	min_info;
 	char		*str;
 
 	if (n == -2147483648)
 		return (ft_get_bigmin_str());
-	min_info = (t_min_info *)ft_calloc(1, sizeof(t_min_info));
-	min_info->minus_flag = 0;
-	min_info->length = 0;
-	min_info->n1 = 0;
-	min_info->n2 = 0;
-	ft_set_min_info(min_info, n);
-	str = (char *)ft_calloc(min_info->length + 1, sizeof(char));
+	min_info.minus_flag = 0;
+	min_info.length = 0;
+	min_info.n1 = 0;
+	min_info.n2 = 0;
+	ft_set_min_info(&min_info, n);
+	str = (char *)ft_calloc(min_info.length + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (min_info->minus_flag == 1)
+	if (min_info.minus_flag == 1)
 		str[0] = '-';
-	while (min_info->length-- > min_info->minus_flag)
+	while (min_info.length-- > min_info.minus_flag)
 	{
-		str[min_info->length] = (char)((min_info->n2 % 10) + '0');
-		min_info->n2 /= 10;
+		str[min_info.length] = (char)((min_info.n2 % 10) + '0');
+		min_info.n2 /= 10;
 	}
-	free(min_info);
 	return (str);
 }
 
